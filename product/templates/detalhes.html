@@ -1,0 +1,11 @@
+<h1>{{ produto.nome }}</h1>
+<p>{{ produto.descricao }}</p>
+<p>{{ produto.preco }}</p>
+<p>Criado em: {{ produto.data_criacao }}</p>
+<p>Última modificação: {{ produto.data_modificacao }}</p>
+<a href="{% url 'edita_produto' produto.pk %}">Editar</a>
+<form method="post" action="{% url 'deleta_produto' produto.pk %}">
+    {% csrf_token %}
+    <button type="submit">Deletar</button>
+</form>
+<a href="{% url 'lista_produtos' %}">Voltar</a>

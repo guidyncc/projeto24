@@ -1,0 +1,9 @@
+<h1>Produtos</h1>
+<a href="{% url 'cria_produto' %}">Novo Produto</a>
+<ul>
+    {% for produto in produtos %}
+    <li>
+        <a href="{% url 'detalhes_produto' produto.pk %}">{{ produto.nome }}</a>
+    </li>
+    {% endfor %}
+</ul>
